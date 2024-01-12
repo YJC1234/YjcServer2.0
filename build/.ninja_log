@@ -1,0 +1,24 @@
+# ninja log v5
+2298	4013	1704901934854970737	tests/CMakeFiles/task_test.dir/task_test.cpp.o	fa8a73bdb03b34
+37	3180	1704901934024614405	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/threadpool.cpp.o	cb1e6652bfb20ffa
+9549	9757	1704901940597835676	tests/threadpool_test	5f4b2291a2a6f738
+1	2976	1704901933819960244	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/file_descriptor.cpp.o	9c620961fc568f00
+9548	9672	1704901940513728393	tests/http_server_test	13a04ef4f2ae18bb
+16	3648	1704901934489934861	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/socket.cpp.o	68a0f5273fd876a1
+2	4340	1704901935183841015	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_server.cpp.o	86a489c215db6c24
+9549	9712	1704901940557784589	tests/spdlog_test	7076b804bf7f28b8
+1	2138	1704901932981231684	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_parser.cpp.o	ce0bc52828bb9c55
+9549	9647	1704901940489697739	tests/task_test	ca6bc8cb39703385
+1476	10397	1704901941238615904	tests/CMakeFiles/config_test.dir/config_test.cpp.o	568e39a45b124cba
+2138	6210	1704901937052143793	tests/CMakeFiles/spdlog_test.dir/spdlog_test.cpp.o	66414e336e9b26a4
+9480	9548	1704901940389570020	YServer/BaseNet/libBaseNet.a	62839be4a911ca71
+1	2297	1704901933141761652	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/buffer_ring.cpp.o	2f32ddf784bf67ea
+1717	4189	1704901935031462521	tests/CMakeFiles/http_server_test.dir/http_server_test.cpp.o	31b32f45c5e2e007
+2	1716	1704901932559670555	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/io_uring.cpp.o	cf92fa4372c93b5f
+1	1475	1704901932318778480	YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_message.cpp.o	52158c561b2adda0
+9391	9480	1704901940317478062	YServer/Config/libConfig.a	a68b81ed4ebccb74
+0	11	0	/home/yjc/Cpp_Project/YServer/build/CMakeFiles/cmake.verify_globs	5860130e61cdad1e
+10397	10549	1704901941390785771	tests/config_test	237ee9bd7c4d4603
+2976	9469	1704901940309467845	tests/CMakeFiles/threadpool_test.dir/threadpool_test.cpp.o	403854359972b9fe
+1	8714	1704901939556426282	YServer/Config/CMakeFiles/Config.dir/src/util.cpp.o	1f8fc15c23643535
+0	9391	1704901940229365670	YServer/Config/CMakeFiles/Config.dir/src/Config.cpp.o	bb43db9632067cec

@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/Config/CMakeFiles/Config.dir/src/Config.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/Config/src/Config.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/Config/src/Config.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/Config/CMakeFiles/Config.dir/src/util.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/Config/src/util.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/Config/src/util.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/buffer_ring.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/buffer_ring.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/buffer_ring.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/file_descriptor.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/file_descriptor.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/file_descriptor.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_message.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_message.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_message.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_parser.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_parser.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_parser.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/http_server.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_server.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/http_server.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/io_uring.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/io_uring.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/io_uring.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/socket.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/socket.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/socket.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/BaseNet/CMakeFiles/BaseNet.dir/src/threadpool.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/threadpool.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/BaseNet/src/threadpool.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/frameMain.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/frameMain.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/config_test.dir/config_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/config_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/config_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/http_server_test.dir/http_server_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/http_server_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/http_server_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/spdlog_test.dir/spdlog_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/spdlog_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/spdlog_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/task_test.dir/task_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/task_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/task_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/threadpool_test.dir/threadpool_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/threadpool_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/threadpool_test.cpp"
+}
+]

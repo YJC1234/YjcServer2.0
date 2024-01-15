@@ -291,6 +291,22 @@ build YServer/BaseNet/rebuild_cache: phony YServer/BaseNet/CMakeFiles/rebuild_ca
 
 build cmake_object_order_depends_target_WebFrame: phony || cmake_object_order_depends_target_Config
 
+build YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Context.cpp.o: CXX_COMPILER__WebFrame_Debug /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Context.cpp || cmake_object_order_depends_target_WebFrame
+  DEFINES = -DSPDLOG_COMPILED_LIB
+  DEP_FILE = YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Context.cpp.o.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include
+  OBJECT_DIR = YServer/WebFrame/CMakeFiles/WebFrame.dir
+  OBJECT_FILE_DIR = YServer/WebFrame/CMakeFiles/WebFrame.dir/src
+
+build YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Router.cpp.o: CXX_COMPILER__WebFrame_Debug /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Router.cpp || cmake_object_order_depends_target_WebFrame
+  DEFINES = -DSPDLOG_COMPILED_LIB
+  DEP_FILE = YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Router.cpp.o.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include
+  OBJECT_DIR = YServer/WebFrame/CMakeFiles/WebFrame.dir
+  OBJECT_FILE_DIR = YServer/WebFrame/CMakeFiles/WebFrame.dir/src
+
 build YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o: CXX_COMPILER__WebFrame_Debug /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/frameMain.cpp || cmake_object_order_depends_target_WebFrame
   DEFINES = -DSPDLOG_COMPILED_LIB
   DEP_FILE = YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o.d
@@ -307,7 +323,7 @@ build YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o: CXX_COMPILER
 #############################################
 # Link the static library YServer/WebFrame/libWebFrame.a
 
-build YServer/WebFrame/libWebFrame.a: CXX_STATIC_LIBRARY_LINKER__WebFrame_Debug YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o || YServer/Config/libConfig.a
+build YServer/WebFrame/libWebFrame.a: CXX_STATIC_LIBRARY_LINKER__WebFrame_Debug YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Context.cpp.o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Router.cpp.o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o || YServer/Config/libConfig.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = YServer/WebFrame/CMakeFiles/WebFrame.dir
   POST_BUILD = :
@@ -412,6 +428,40 @@ build tests/http_server_test: CXX_EXECUTABLE_LINKER__http_server_test_Debug test
   TARGET_PDB = http_server_test.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target iouring_code_err_test
+
+
+#############################################
+# Order-only phony target for iouring_code_err_test
+
+build cmake_object_order_depends_target_iouring_code_err_test: phony || cmake_object_order_depends_target_BaseNet cmake_object_order_depends_target_Config
+
+build tests/CMakeFiles/iouring_code_err_test.dir/iouring_code_err_test.cpp.o: CXX_COMPILER__iouring_code_err_test_Debug /home/yjc/Cpp_Project/YServer/tests/iouring_code_err_test.cpp || cmake_object_order_depends_target_iouring_code_err_test
+  DEFINES = -DSPDLOG_COMPILED_LIB
+  DEP_FILE = tests/CMakeFiles/iouring_code_err_test.dir/iouring_code_err_test.cpp.o.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include
+  OBJECT_DIR = tests/CMakeFiles/iouring_code_err_test.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/iouring_code_err_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target iouring_code_err_test
+
+
+#############################################
+# Link the executable tests/iouring_code_err_test
+
+build tests/iouring_code_err_test: CXX_EXECUTABLE_LINKER__iouring_code_err_test_Debug tests/CMakeFiles/iouring_code_err_test.dir/iouring_code_err_test.cpp.o | ../YServer/spdlog/build/libspdlog.a YServer/Config/libConfig.a YServer/BaseNet/libBaseNet.a YServer/WebFrame/libWebFrame.a YServer/BaseNet/libBaseNet.a YServer/WebFrame/libWebFrame.a /usr/lib/liburing.so YServer/Config/libConfig.a ../YServer/spdlog/build/libspdlog.a || YServer/BaseNet/libBaseNet.a YServer/Config/libConfig.a
+  FLAGS = -g
+  LINK_LIBRARIES = ../YServer/spdlog/build/libspdlog.a  YServer/Config/libConfig.a  YServer/BaseNet/libBaseNet.a  YServer/WebFrame/libWebFrame.a  YServer/BaseNet/libBaseNet.a  YServer/WebFrame/libWebFrame.a  /usr/lib/liburing.so  YServer/Config/libConfig.a  ../YServer/spdlog/build/libspdlog.a  -lyaml-cpp
+  OBJECT_DIR = tests/CMakeFiles/iouring_code_err_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tests/iouring_code_err_test
+  TARGET_PDB = iouring_code_err_test.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target spdlog_test
 
 
@@ -513,6 +563,40 @@ build tests/threadpool_test: CXX_EXECUTABLE_LINKER__threadpool_test_Debug tests/
   TARGET_FILE = tests/threadpool_test
   TARGET_PDB = threadpool_test.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target web_frame_base_test
+
+
+#############################################
+# Order-only phony target for web_frame_base_test
+
+build cmake_object_order_depends_target_web_frame_base_test: phony || cmake_object_order_depends_target_BaseNet cmake_object_order_depends_target_Config
+
+build tests/CMakeFiles/web_frame_base_test.dir/web_frame_base_test.cpp.o: CXX_COMPILER__web_frame_base_test_Debug /home/yjc/Cpp_Project/YServer/tests/web_frame_base_test.cpp || cmake_object_order_depends_target_web_frame_base_test
+  DEFINES = -DSPDLOG_COMPILED_LIB
+  DEP_FILE = tests/CMakeFiles/web_frame_base_test.dir/web_frame_base_test.cpp.o.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include
+  OBJECT_DIR = tests/CMakeFiles/web_frame_base_test.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/web_frame_base_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target web_frame_base_test
+
+
+#############################################
+# Link the executable tests/web_frame_base_test
+
+build tests/web_frame_base_test: CXX_EXECUTABLE_LINKER__web_frame_base_test_Debug tests/CMakeFiles/web_frame_base_test.dir/web_frame_base_test.cpp.o | ../YServer/spdlog/build/libspdlog.a YServer/Config/libConfig.a YServer/BaseNet/libBaseNet.a YServer/WebFrame/libWebFrame.a YServer/BaseNet/libBaseNet.a YServer/WebFrame/libWebFrame.a /usr/lib/liburing.so YServer/Config/libConfig.a ../YServer/spdlog/build/libspdlog.a || YServer/BaseNet/libBaseNet.a YServer/Config/libConfig.a
+  FLAGS = -g
+  LINK_LIBRARIES = ../YServer/spdlog/build/libspdlog.a  YServer/Config/libConfig.a  YServer/BaseNet/libBaseNet.a  YServer/WebFrame/libWebFrame.a  YServer/BaseNet/libBaseNet.a  YServer/WebFrame/libWebFrame.a  /usr/lib/liburing.so  YServer/Config/libConfig.a  ../YServer/spdlog/build/libspdlog.a  -lyaml-cpp
+  OBJECT_DIR = tests/CMakeFiles/web_frame_base_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tests/web_frame_base_test
+  TARGET_PDB = web_frame_base_test.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -549,6 +633,8 @@ build config_test: phony tests/config_test
 
 build http_server_test: phony tests/http_server_test
 
+build iouring_code_err_test: phony tests/iouring_code_err_test
+
 build libBaseNet.a: phony YServer/BaseNet/libBaseNet.a
 
 build libConfig.a: phony YServer/Config/libConfig.a
@@ -560,6 +646,8 @@ build spdlog_test: phony tests/spdlog_test
 build task_test: phony tests/task_test
 
 build threadpool_test: phony tests/threadpool_test
+
+build web_frame_base_test: phony tests/web_frame_base_test
 
 # =============================================================================
 # Folder targets.
@@ -604,7 +692,7 @@ build YServer/WebFrame/all: phony YServer/WebFrame/libWebFrame.a
 #############################################
 # Folder: /home/yjc/Cpp_Project/YServer/build/tests
 
-build tests/all: phony tests/config_test tests/http_server_test tests/spdlog_test tests/task_test tests/threadpool_test
+build tests/all: phony tests/config_test tests/http_server_test tests/iouring_code_err_test tests/spdlog_test tests/task_test tests/threadpool_test tests/web_frame_base_test
 
 # =============================================================================
 # Built-in targets

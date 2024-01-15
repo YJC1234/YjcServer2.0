@@ -1,5 +1,7 @@
 #pragma once
 
+#include <BaseNet/http_message.h>
+#include <BaseNet/http_server.h>
 #include <functional>
 #include <memory>
 #include <string>
@@ -20,12 +22,12 @@ public:
     void ServeHTTP(http_request::ptr request, http_response::ptr response);
     void Run(const std::string& port);
 
-    void Get(const std::string& path, HandlerFunc& handler);
-    void Post(const std::string& path, HandlerFunc& handler);
+    void Get(const std::string& path,const HandlerFunc& handler);
+    void Post(const std::string& path,const HandlerFunc& handler);
 
 private:
     void addRoute(const std::string& method, const std::string& path,
-                  HandlerFunc& handler);
+                const  HandlerFunc& handler);
 
     std::unique_ptr<http_server>                 server_;
     std::unordered_map<std::string, HandlerFunc> router_;

@@ -1,0 +1,221 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "YServer",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-YServer-Debug-f8ccdd05b642f4a1568a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "YServer"
+				},
+				{
+					"build" : "YServer/Config",
+					"jsonFile" : "directory-YServer.Config-Debug-e59ca869d646e241b5cd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "YServer/Config",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "YServer/BaseNet",
+					"jsonFile" : "directory-YServer.BaseNet-Debug-0f53b39a9c0642a2624e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "YServer/BaseNet",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "YServer/WebFrame",
+					"jsonFile" : "directory-YServer.WebFrame-Debug-9c3dca8b5c5ce2de537f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "YServer/WebFrame",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "YServer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "BaseNet::@f9aa07e02b0f6f11783c",
+					"jsonFile" : "target-BaseNet-Debug-334b920a74ba19cb4b58.json",
+					"name" : "BaseNet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Config::@db7e72d19ab4aa776543",
+					"jsonFile" : "target-Config-Debug-d61036415f911b2ad491.json",
+					"name" : "Config",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "WebFrame::@03f8adf947ec8b8d56d6",
+					"jsonFile" : "target-WebFrame-Debug-6e49527c9ae9c86420e3.json",
+					"name" : "WebFrame",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "config_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-config_test-Debug-7a2e2bd68495e16298bf.json",
+					"name" : "config_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "http_server_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-http_server_test-Debug-7c70f6bc38bc19662fa7.json",
+					"name" : "http_server_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "iouring_code_err_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-iouring_code_err_test-Debug-77b2a0c6a0df61ec27b3.json",
+					"name" : "iouring_code_err_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "spdlog_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-spdlog_test-Debug-2b3ccdd47f03e2d9a48f.json",
+					"name" : "spdlog_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "task_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-task_test-Debug-20b67571bed9d0ec889a.json",
+					"name" : "task_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "threadpool_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-threadpool_test-Debug-3a7df6a50bb03ddeb380.json",
+					"name" : "threadpool_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "web_frame_base_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-web_frame_base_test-Debug-629b29f5b7fea785b967.json",
+					"name" : "web_frame_base_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yjc/Cpp_Project/YServer/build",
+		"source" : "/home/yjc/Cpp_Project/YServer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

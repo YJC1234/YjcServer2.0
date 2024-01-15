@@ -7,9 +7,11 @@
 #include <BaseNet/socket.h>
 #include <BaseNet/task.h>
 #include <BaseNet/threadpool.h>
-#include <WebFrame/frameMain.h>
 
 namespace YServer {
+
+class Engine;
+
 class thread_worker {
 public:
     explicit thread_worker(const char* port, Engine* engine);

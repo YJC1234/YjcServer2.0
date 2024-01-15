@@ -3,6 +3,8 @@
 
 #include <sys/socket.h>
 
+#include <cctype>
+#include <chrono>
 #include <coroutine>
 #include <optional>
 #include <span>
@@ -59,9 +61,9 @@ public:
     public:
         recv_awaiter(int raw_file_descriptor, size_t length);
 
-        [[nodiscard]] auto await_ready() const -> bool;
-        auto await_suspend(std::coroutine_handle<> coroutine) -> void;
-        auto await_resume() -> std::tuple<unsigned int, ssize_t>;
+        [[nodiscard]] bool await_ready() const;
+        void               await_suspend(std::coroutine_handle<> coroutine);
+        auto               await_resume() -> std::tuple<unsigned int, ssize_t>;
 
     private:
         const int    raw_file_descriptor_;
@@ -69,7 +71,26 @@ public:
         sqe_data     sqe_data_;
     };
 
+    class recv_timeout_awaiter {
+    public:
+        recv_timeout_awaiter(int raw_file_descriptor, size_t length,
+                             std::chrono::seconds duration_seconds);
+
+        [[nodiscard]] bool await_ready() const;
+        void               await_suspend(std::coroutine_handle<> coroutine);
+        auto               await_resume() -> std::tuple<unsigned int, ssize_t>;
+
+    private:
+        const int            raw_file_descriptor_;
+        const size_t         length_;
+        std::chrono::seconds duration_seconds_;
+        sqe_data             sqe_data_;
+    };
+
     auto recv(size_t length) -> recv_awaiter;
+
+    auto recv(size_t length, std::chrono::seconds duration_seconds)
+        -> recv_timeout_awaiter;
 
     class send_awaiter {
     public:
@@ -87,7 +108,7 @@ public:
         sqe_data               sqe_data_;
     };
 
-    auto send(const std::span<char>& buffer, size_t length) -> task<ssize_t>;
+    auto send(const std::span<char> buffer, size_t length) -> task<ssize_t>;
 };
 
 }  // namespace YServer

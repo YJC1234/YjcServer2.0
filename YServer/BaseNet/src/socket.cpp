@@ -1,14 +1,15 @@
-#include <BaseNet/socket.h>
 
 #include <liburing/io_uring.h>
 #include <netdb.h>
 
+#include <spdlog/spdlog.h>
 #include <cstring>
 #include <span>
 #include <stdexcept>
 
 #include <BaseNet/constant.h>
 #include <BaseNet/file_descriptor.h>
+#include <BaseNet/socket.h>
 
 namespace YServer {
 server_socket::server_socket() = default;
@@ -23,6 +24,7 @@ auto server_socket::bind(const char* port) -> void {
     address_hints.ai_flags = AI_PASSIVE;
 
     if (getaddrinfo(nullptr, port, &address_hints, &socket_address) != 0) {
+        spdlog::get("system_logger")->error("failed to invoke 'getaddrinfo'");
         throw std::runtime_error("failed to invoke 'getaddrinfo'");
     }
 
@@ -30,22 +32,28 @@ auto server_socket::bind(const char* port) -> void {
         raw_file_descriptor_ =
             socket(node->ai_family, node->ai_socktype, node->ai_protocol);
         if (raw_file_descriptor_.value() == -1) {
+            spdlog::get("system_logger")->error("failed to invoke 'socket'");
             throw std::runtime_error("failed to invoke 'socket'");
         }
 
         const int flag = 1;
         if (setsockopt(raw_file_descriptor_.value(), SOL_SOCKET, SO_REUSEADDR,
                        &flag, sizeof(flag)) == -1) {
+            spdlog::get("system_logger")
+                ->error("failed to invoke 'setsockopt'");
             throw std::runtime_error("failed to invoke 'setsockopt'");
         }
 
         if (setsockopt(raw_file_descriptor_.value(), SOL_SOCKET, SO_REUSEPORT,
                        &flag, sizeof(flag)) == -1) {
+            spdlog::get("system_logger")
+                ->error("failed to invoke 'setsockopt'");
             throw std::runtime_error("failed to invoke 'setsockopt'");
         }
 
         if (::bind(raw_file_descriptor_.value(), node->ai_addr,
                    node->ai_addrlen) == -1) {
+            spdlog::get("system_logger")->error("failed to invoke 'bind'");
             throw std::runtime_error("failed to invoke 'bind'");
         }
         break;
@@ -103,6 +111,7 @@ auto server_socket::accept(sockaddr_storage* client_address,
                            socklen_t*        client_address_size)
     -> multishot_accept_guard& {
     if (!raw_file_descriptor_.has_value()) {
+        spdlog::get("system_logger")->error("the file descriptor is invalid");
         throw std::runtime_error("the file descriptor is invalid");
     }
 
@@ -148,6 +157,45 @@ auto client_socket::recv(const size_t length) -> recv_awaiter {
     throw std::runtime_error("the file descriptor is invalid");
 }
 
+client_socket::recv_timeout_awaiter::recv_timeout_awaiter(
+    int raw_file_descriptor, size_t length,
+    std::chrono::seconds duration_seconds)
+    : raw_file_descriptor_(raw_file_descriptor),
+      length_(length),
+      duration_seconds_(duration_seconds) {}
+
+bool client_socket::recv_timeout_awaiter::await_ready() const {
+    return false;
+}
+
+void client_socket::recv_timeout_awaiter::await_suspend(
+    std::coroutine_handle<> coroutine) {
+    sqe_data_.coroutine = coroutine.address();
+    io_uring::get_instance().submit_recv_timeout_request(
+        &sqe_data_, raw_file_descriptor_, length_, duration_seconds_);
+}
+
+auto client_socket::recv_timeout_awaiter::await_resume()
+    -> std::tuple<unsigned int, ssize_t> {
+    io_uring::get_instance().submit_cancel_request(
+        &sqe_data_);  //关闭超时的请求
+    if (sqe_data_.cqe_flags | IORING_CQE_F_BUFFER) {
+        const unsigned int buffer_id =
+            sqe_data_.cqe_flags >> IORING_CQE_BUFFER_SHIFT;
+        return {buffer_id, sqe_data_.cqe_res};
+    }
+    return {};
+}
+
+auto client_socket::recv(const size_t         length,
+                         std::chrono::seconds duration_seconds)
+    -> recv_timeout_awaiter {
+    if (raw_file_descriptor_.has_value()) {
+        return {raw_file_descriptor_.value(), length, duration_seconds};
+    }
+    throw std::runtime_error("the file descriptor is invalid");
+}
+
 client_socket::send_awaiter::send_awaiter(const int raw_file_descriptor,
                                           const std::span<char>& buffer,
                                           const size_t           length)
@@ -168,12 +216,14 @@ auto client_socket::send_awaiter::await_suspend(
 }
 
 auto client_socket::send_awaiter::await_resume() const -> ssize_t {
+    delete buffer_.data();
     return sqe_data_.cqe_res;
 }
 
-auto client_socket::send(const std::span<char>& buffer, const size_t length)
+auto client_socket::send(const std::span<char> buffer, const size_t length)
     -> task<ssize_t> {
     if (!raw_file_descriptor_.has_value()) {
+        spdlog::get("system_logger")->error("the file descriptor is invalid");
         throw std::runtime_error("the file descriptor is invalid");
     }
 

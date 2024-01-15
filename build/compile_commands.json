@@ -51,6 +51,16 @@
 },
 {
   "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Context.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Context.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Context.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/Router.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Router.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/Router.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
   "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o YServer/WebFrame/CMakeFiles/WebFrame.dir/src/frameMain.cpp.o -c /home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/frameMain.cpp",
   "file": "/home/yjc/Cpp_Project/YServer/YServer/WebFrame/src/frameMain.cpp"
 },
@@ -66,6 +76,11 @@
 },
 {
   "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/iouring_code_err_test.dir/iouring_code_err_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/iouring_code_err_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/iouring_code_err_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
   "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/spdlog_test.dir/spdlog_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/spdlog_test.cpp",
   "file": "/home/yjc/Cpp_Project/YServer/tests/spdlog_test.cpp"
 },
@@ -78,5 +93,10 @@
   "directory": "/home/yjc/Cpp_Project/YServer/build",
   "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/threadpool_test.dir/threadpool_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/threadpool_test.cpp",
   "file": "/home/yjc/Cpp_Project/YServer/tests/threadpool_test.cpp"
+},
+{
+  "directory": "/home/yjc/Cpp_Project/YServer/build",
+  "command": "/usr/local/bin/g++ -DSPDLOG_COMPILED_LIB -I/home/yjc/Cpp_Project/YServer/YServer/Config/include -I/home/yjc/Cpp_Project/YServer/YServer/BaseNet/include -I/home/yjc/Cpp_Project/YServer/YServer/WebFrame/include -isystem /home/yjc/Cpp_Project/YServer/YServer/spdlog/include -g -std=gnu++20 -o tests/CMakeFiles/web_frame_base_test.dir/web_frame_base_test.cpp.o -c /home/yjc/Cpp_Project/YServer/tests/web_frame_base_test.cpp",
+  "file": "/home/yjc/Cpp_Project/YServer/tests/web_frame_base_test.cpp"
 }
 ]

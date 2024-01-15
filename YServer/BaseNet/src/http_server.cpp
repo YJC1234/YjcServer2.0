@@ -39,7 +39,7 @@ thread_worker::thread_worker(const char* port, Engine* engine)
     accept_client_task.detach();
 }
 
-auto thread_worker::accept_client() -> task<> {
+task<> thread_worker::accept_client() {
     while (true) {
         const int raw_file_descriptor = co_await server_socket_.accept();
         if (raw_file_descriptor == -1) {
@@ -135,8 +135,13 @@ auto thread_worker::event_loop() -> task<> {
             io_uring.cqe_seen(cqe);
 
             if (coroutine_address != nullptr) {
-                std::coroutine_handle<>::from_address(coroutine_address)
-                    .resume();
+                if (cqe->res == -ETIME) {
+                    std::coroutine_handle<>::from_address(coroutine_address)
+                        .destroy();
+                } else {
+                    std::coroutine_handle<>::from_address(coroutine_address)
+                        .resume();
+                }
             }
         };
     }

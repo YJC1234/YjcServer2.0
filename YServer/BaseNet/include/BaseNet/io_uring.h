@@ -4,6 +4,7 @@
 #include <liburing.h>
 #include <sys/socket.h>
 
+#include <chrono>
 #include <span>
 #include <vector>
 
@@ -74,6 +75,11 @@ public:
                                int raw_file_descriptor_out, size_t length);
 
     void submit_cancel_request(sqe_data* sqe_data);
+
+    void submit_recv_timeout_request(sqe_data*            sqe_data,
+                                     const int            raw_file_descriptor,
+                                     const size_t         length,
+                                     std::chrono::seconds duration_second);
 
     void setup_buffer_ring(io_uring_buf_ring*           buffer_ring,
                            std::span<std::vector<char>> buffer_list,

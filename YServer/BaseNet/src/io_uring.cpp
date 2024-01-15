@@ -114,6 +114,21 @@ auto io_uring::submit_cancel_request(sqe_data* sqe_data) -> void {
     io_uring_prep_cancel(sqe, sqe_data, 0);
 }
 
+void io_uring::submit_recv_timeout_request(
+    sqe_data* sqe_data, const int raw_file_descriptor, const size_t length,
+    std::chrono::seconds duration_second) {
+    io_uring_sqe* sqe = io_uring_get_sqe(&io_uring_);
+    io_uring_prep_recv(sqe, raw_file_descriptor, nullptr, length, 0);
+    __kernel_timespec ts;
+    ts.tv_sec = duration_second.count();
+    ts.tv_nsec = 0;
+
+    io_uring_prep_link_timeout(sqe, &ts, 0);
+    io_uring_sqe_set_flags(sqe, IOSQE_BUFFER_SELECT);
+    io_uring_sqe_set_data(sqe, sqe_data);
+    sqe->buf_group = BUFFER_GROUP_ID;
+}
+
 auto io_uring::setup_buffer_ring(io_uring_buf_ring*           buffer_ring,
                                  std::span<std::vector<char>> buffer_list,
                                  const unsigned int buffer_ring_size) -> void {

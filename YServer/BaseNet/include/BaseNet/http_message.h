@@ -67,6 +67,17 @@ public:
         send_task.detach();
     }
 
+    void send(const std::string& body) {
+        size_t len = body.size();
+        set_Header("Content-Length", std::to_string(len));
+        std::string* message =  //!使用std::string会析构！应该由send释放message
+            new std::string(serialize() + std::move(body));
+
+        auto send_task = client_socket_->send(*message, message->size());
+        send_task.resume();
+        send_task.detach();
+    }
+
 private:
     std::shared_ptr<client_socket> client_socket_;
 };

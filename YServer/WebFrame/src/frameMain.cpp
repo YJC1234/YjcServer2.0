@@ -1,5 +1,7 @@
 #include <BaseNet/http_message.h>
 #include <BaseNet/http_server.h>
+#include <WebFrame/Context.h>
+#include <WebFrame/Router.h>
 #include <WebFrame/frameMain.h>
 #include <spdlog/spdlog.h>
 
@@ -9,10 +11,11 @@ Engine::Engine() {
     server_ = std::make_unique<http_server>(this);
 }
 
+Engine::~Engine() {}
+
 void Engine::addRoute(const std::string& method, const std::string& path,
                       const HandlerFunc& handler) {
-    std::string key = method + "-" + path;
-    router_[key] = handler;
+    router_->addRoute(method, path, handler);
 }
 
 void Engine::Get(const std::string& path, const HandlerFunc& handler) {
@@ -28,16 +31,7 @@ void Engine::Run(const std::string& port) {
 }
 
 void Engine::ServeHTTP(http_request::ptr request, http_response::ptr response) {
-    std::string key = request->method + "-" + request->url;
-    if (router_.count(key)) {
-        router_[key](request, response);
-    } else {
-        response->set_status(404);
-        response->set_status_text("Not Found");
-        response->set_version("HTTP/1.0");
-        response->set_Header("Content-Type", "text/html");
-        response->set_Header("Connection", "close");
-        response->send("<h1>404 Not Found</h1>");
-    }
+    auto ctx = Context::New(request, response);
+    router_->handle(ctx);
 }
 }  // namespace YServer

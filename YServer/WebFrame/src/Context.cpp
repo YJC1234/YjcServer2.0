@@ -12,4 +12,15 @@ Context::ptr Context::New(http_request::ptr  request,
     return ctx;
 }
 
+void Context::Status(int code) {
+    Status_code_ = code;
+    Response_->set_status(code);
+}
+
+void Context::setHeader(const std::string& key, const std::string& value) {
+    Response_->set_Header(key, value);
+}
+
+
+
 }  // namespace YServer
